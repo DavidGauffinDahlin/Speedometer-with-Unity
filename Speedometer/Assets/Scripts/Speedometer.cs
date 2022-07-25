@@ -27,7 +27,7 @@ public class Speedometer : MonoBehaviour{
 	// Since the location tends to not update when not moving,
 	// after a timeout (in seconds) we assume that speed is zero
 	[Tooltip("After timeout, if no location updates assume immobility")]
-	int timeout = 10;
+	int timeout = 4;
 
 	[Header("Only for Debugging purposes, (read only, do not edit)")] // ----------------------------
 

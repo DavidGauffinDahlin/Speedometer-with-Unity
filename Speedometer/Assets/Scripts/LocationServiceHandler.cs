@@ -16,6 +16,10 @@ public class LocationServiceHandler : MonoBehaviour {
 	// How long to wait before giving up starting the service (seconds)
 	public int maxWait = 10;
 
+	[Tooltip("Default is 10 m for both so don't go too low and keep desiredAccuracy in meters above 4 m, less than 4 won't improve the accuracy")]
+	[SerializeField] float desiredUpdateDistanceInMeters = 1f;
+	[SerializeField] float desiredAccuracyInMeters = 6f;
+
 	[Header("Only for Debugging purposes, (read only, do not edit)")] // ----------------------------
 	// Value set by this class to indicate service is ready to used
 	public bool ready = false;
@@ -61,7 +65,7 @@ public class LocationServiceHandler : MonoBehaviour {
 		}
 
 		// Start service before querying location
-		service.Start();
+		service.Start(desiredAccuracyInMeters, desiredUpdateDistanceInMeters);
 
 		// Wait until service initializes
 		while (service.status == LocationServiceStatus.Initializing && maxWait > 0) {

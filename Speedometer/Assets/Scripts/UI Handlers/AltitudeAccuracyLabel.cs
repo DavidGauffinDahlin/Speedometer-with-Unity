@@ -21,6 +21,6 @@ public class AltitudeAccuracyLabel : MonoBehaviour
 			return;
 		}
 
-		text.text = " accuracy: " + speedometer.altitudeAccuracy + " meters";
+		text.text = " accuracy: " + System.Math.Round(speedometer.altitudeAccuracy, 1) + " meters";
 	}
 }

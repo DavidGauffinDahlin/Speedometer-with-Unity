@@ -21,6 +21,6 @@ public class LocationAccuracyLabel : MonoBehaviour
 			return;
 		}
 
-		text.text = "accuracy: " + speedometer.horizontalAccuracy + " meters";
+		text.text = "accuracy: " + System.Math.Round(speedometer.horizontalAccuracy, 1) + " meters";
 	}
 }
